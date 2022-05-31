@@ -4,7 +4,7 @@ import { AboutComp } from "../components/about/AboutComp";
 
 const About: NextPage = () => {
   return (
-    <div>
+    <div className="">
       <Head>
         <title>Franco Guardini</title>
         <meta name="description" content="" />

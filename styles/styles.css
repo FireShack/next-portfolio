@@ -13,15 +13,132 @@
 
 .sidebar {
   height: 100vh;
-  transition: ease-out 2s;
 }
 
-.sidebar Link a:hover {
-  transform: Translate(2rem);
+.sidebar-link-items {
+  transition: 0.2s ease-in-out;
+}
+.sidebar-link-items:hover {
+  transform: translate(1rem);
+}
+
+.sidebar-link-items a div:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #0070f3;
+  color: #f1faee;
 }
 
 .image-profile-home {
   height: 30rem;
-  width: 30rem;
+  width: 40rem;
   border-top-left-radius: 100%;
+}
+
+.btn--switch-container {
+  height: 1.5rem;
+  width: 4rem;
+  background-color: #0070f3;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.btn--switch-state {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #000;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btn--switch-state-light {
+  transition: 1s;
+  transform: translateX(2rem);
+}
+
+.btn--switch-state-dark {
+  transition: 1s;
+  transform: translateX(2rem);
+}
+
+.icon--transition-rotate {
+  animation-name: icon-animation-rotate;
+  animation-duration: 1s;
+  cursor: pointer;
+}
+@keyframes icon-animation-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    /* transform: rotate(0deg); */
+    transform: rotate(360deg);
+  }
+}
+
+.icon--transition-scale {
+  animation-name: icon-animation-scale;
+  animation-duration: 1s;
+  cursor: pointer;
+}
+@keyframes icon-animation-scale {
+  0% {
+    transform: translateX(-15px);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.bg--stars-random {
+  height: 10px;
+  margin-top: 2rem;
+  width: 10px;
+  background-color: #000;
+  border-radius: 100%;
+  animation-name: stars-generation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes stars-generation {
+  0% {
+    transform: translateY(60rem);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60rem);
+    opacity: 0.5;
+  }
+}
+
+.bar--language-style {
+  height: 2rem;
+  width: 15rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.404);
+  border-radius: 10px;
+}
+.bar--language-flag {
+  cursor: pointer;
+}
+
+.icon--transform-rotate {
+  transform: rotate(-112deg);
+}
+
+.avatar--background-image {
+  background-image: url("../components/images/blob\ \(1\).svg");
+  background-repeat: no-repeat;
+}
+
+.homeavatar--background-image {
+  background-image: url("../components/images/blob\ \(2\).svg");
+  background-repeat: no-repeat;
 }

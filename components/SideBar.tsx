@@ -1,63 +1,115 @@
 import type { NextComponentType } from "next";
+import { useState } from "react";
 import Link from "next/link";
+import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import { GiUfo } from "react-icons/gi";
+import { AiOutlineHome } from "react-icons/ai";
+import { SiAboutdotme } from "react-icons/si";
+import { MdWorkOutline } from "react-icons/md";
+import { RiMailSendLine } from "react-icons/ri";
+import { FaRegNewspaper } from "react-icons/fa";
+import { BiMenuAltRight } from "react-icons/bi";
 
 const SideBar: NextComponentType = () => {
+  const [theme, setTheme] = useState("light");
+
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <AiOutlineHome size={25} />,
+    },
+    {
+      name: "About",
+      link: "/About",
+      icon: <SiAboutdotme size={25} />,
+    },
+    {
+      name: "Work",
+      link: "/Projects",
+      icon: <MdWorkOutline size={25} />,
+    },
+    {
+      name: "Contact",
+      link: "/Contact",
+      icon: <RiMailSendLine size={25} />,
+    },
+    {
+      name: "Blog",
+      link: "/Contact",
+      icon: <FaRegNewspaper size={25} />,
+    },
+  ];
+
   return (
-    <div className="col-5 col-md-2 col-lg-2 navside-bg border-end sidebar">
-      <div className="row">
-        <div className="d-flex justify-content-center mt-3"></div>
-        <div className="col mt-5 border-bottom">
-          <div className="d-flex justify-content-center"></div>
-          <div>
-            <h5 className="text-center mt-3">Name</h5>
+    <>
+      <div className="col-3 col-md-1 border-end sidebar fixed-top">
+        <div className="d-flex justify-content-evenly mt-3">
+          <div className="d-flex justify-content-center">
+            {
+              <>
+                {theme === "light" && (
+                  <div
+                    className="text-center"
+                    onClick={() => setTheme("dark")}
+                    role="button"
+                  >
+                    <BsFillSunFill
+                      className="icon--transition-rotate"
+                      size={30}
+                    />
+                    <p>Light</p>
+                  </div>
+                )}
+                {theme === "dark" && (
+                  <div
+                    className="text-center"
+                    onClick={() => setTheme("random")}
+                    role="button"
+                  >
+                    <BsMoonStarsFill
+                      className="icon--transition-rotate"
+                      size={30}
+                    />
+                    <p>Dark</p>
+                  </div>
+                )}
+                {theme === "random" && (
+                  <div
+                    className="text-center"
+                    role="button"
+                    onClick={() => setTheme("light")}
+                  >
+                    <GiUfo className="icon--transition-scale" size={30} />
+                    <p>Future</p>
+                  </div>
+                )}
+              </>
+            }
           </div>
         </div>
+
+        <>
+          {navItems.map((item) => {
+            const { name, link, icon } = item;
+            return (
+              <div className="sidebar-link-items" key={name}>
+                <Link href={link}>
+                  <a>
+                    <div className="row mt-5 border rounded-pill p-2 sidebar--icon-bg">
+                      {icon}
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
+        </>
       </div>
-      <Link href="/">
-        <a>
-          <div className="row">
-            <div className="col-12 p-3 nav-item-bg rounded-start rounded-pill shadow">
-              <div className="row d-flex align-items-center justify-content-between">
-                <div className="col-8 d-flex align-items-center">Home</div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </Link>
-      <Link href="/About">
-        <a>
-          <div className="row">
-            <div className="col-12 p-3">
-              <div className="row d-flex align-items-center justify-content-between">
-                <div className="col-8 d-flex align-items-center">About me</div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </Link>
-      <Link href="/Projects">
-        <a>
-          <div className="row">
-            <div className="col-12 p-3">
-              <div className="row d-flex align-items-center justify-content-between">
-                <div className="col-8 d-flex align-items-center">Projects</div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </Link>
-      <Link href="/Contact">
-        <a>
-          <div className="row">
-            <div className="col-12 p-3">
-              <div className="row d-flex align-items-center">
-                <div className="col-8 d-flex align-items-center">Contact</div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </Link>
-    </div>
+      <div className="d-flex justify-content-end mt-1 fixed-top cursor-pointer">
+        <BiMenuAltRight size={40} />
+      </div>
+    </>
   );
 };
 
