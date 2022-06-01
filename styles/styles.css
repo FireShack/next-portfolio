@@ -15,6 +15,17 @@
   height: 100vh;
 }
 
+.sidebar-close {
+  transition: 1s;
+  left: -100%;
+}
+
+.sidebar-open {
+  transition: 0.2s;
+  backdrop-filter: blur(15px);
+  right: 100%;
+}
+
 .sidebar-link-items {
   transition: 0.2s ease-in-out;
 }
@@ -141,4 +152,53 @@
 .homeavatar--background-image {
   background-image: url("../components/images/blob\ \(2\).svg");
   background-repeat: no-repeat;
+}
+
+.menu-icon {
+  transition: 0.4s;
+}
+
+/* .menu--icon-transition:hover .menu--icon-bar-1 {
+  transition: 0.4s;
+  transform: translateX(-1rem);
+}
+.menu--icon-transition:hover .menu--icon-bar-2 {
+  transition: 0.4s;
+  transform: translateX(-0.5rem);
+} */
+
+.menu--icon-open-bar-1 {
+  transition: 0.4s;
+  margin: 1rem 0 0 0 !important;
+  transform: translateX(1rem);
+  transform: rotate(-45deg);
+}
+.menu--icon-open-bar-2 {
+  transition: 0.4s;
+  margin: -5px 0 0 0 !important;
+  transform: translateX(1rem);
+  transform: rotate(45deg);
+}
+.menu--icon-open-bar-3 {
+  transition: 0.4s;
+  opacity: 0;
+}
+
+.menu--icon-bar-1 {
+  background-color: #000;
+  height: 5px;
+  width: 35px;
+  transition: 0.4s;
+}
+.menu--icon-bar-2 {
+  background-color: #000;
+  height: 5px;
+  width: 35px;
+  transition: 0.4s;
+}
+.menu--icon-bar-3 {
+  transition: 0.4s;
+  height: 5px;
+  width: 35px;
+  background-color: #000;
 }

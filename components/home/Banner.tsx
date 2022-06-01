@@ -12,7 +12,7 @@ const Banner = () => {
   return (
     <div className="row">
       <SideBar />
-      <div className="col-12 col-md-5 text-center d-flex align-items-center">
+      <div className="col-12 col-md-6 text-center d-flex align-items-center">
         <div className="flex-column">
           <small className="text-muted mt-1">Select your language</small>
           <div className="icon--transform-rotate">
@@ -65,7 +65,7 @@ const Banner = () => {
           )}
         </div>
       </div>
-      <div className="col-12 col-md-6 d-flex align-items-center justify-content-end homeavatar--background-image">
+      <div className="col-12 col-md-6 d-flex align-items-end justify-content-end homeavatar--background-image">
         <Image src={meAv} alt="me" />
       </div>
     </div>

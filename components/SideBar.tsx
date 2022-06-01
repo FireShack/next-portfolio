@@ -8,10 +8,11 @@ import { SiAboutdotme } from "react-icons/si";
 import { MdWorkOutline } from "react-icons/md";
 import { RiMailSendLine } from "react-icons/ri";
 import { FaRegNewspaper } from "react-icons/fa";
-import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const SideBar: NextComponentType = () => {
   const [theme, setTheme] = useState("light");
+  const [open, setOpen] = useState(false);
 
   const navItems = [
     {
@@ -43,7 +44,13 @@ const SideBar: NextComponentType = () => {
 
   return (
     <>
-      <div className="col-3 col-md-1 border-end sidebar fixed-top">
+      <div
+        className={
+          !open
+            ? "col-3 col-md-2 border-end sidebar sidebar-close fixed-top"
+            : "col-3 col-md-2 border-end sidebar sidebar-open fixed-top"
+        }
+      >
         <div className="d-flex justify-content-evenly mt-3">
           <div className="d-flex justify-content-center">
             {
@@ -106,8 +113,32 @@ const SideBar: NextComponentType = () => {
           })}
         </>
       </div>
-      <div className="d-flex justify-content-end mt-1 fixed-top cursor-pointer">
-        <BiMenuAltRight size={40} />
+      <div className="d-flex justify-content-center mt-1 fixed-top">
+        <button className="btn btn-outline-dark">
+          CV <AiOutlineDownload />
+        </button>
+      </div>
+      <div className="menu-icon d-flex justify-content-end mt-1 fixed-top">
+        {/* <BiMenuAltRight size={45} /> */}
+        <div
+          className="menu--icon-transition flex-row"
+          role="button"
+          onClick={() => setOpen(open ? false : true)}
+        >
+          {!open ? (
+            <>
+              <div className="menu--icon-bar-1 mt-1"></div>
+              <div className="menu--icon-bar-2 mt-1"></div>
+              <div className="menu--icon-bar-3 mt-1"></div>
+            </>
+          ) : (
+            <>
+              <div className="menu--icon-bar-1 mt-1 menu--icon-open-bar-1"></div>
+              <div className="menu--icon-bar-2 mt-1 menu--icon-open-bar-2"></div>
+              <div className="menu--icon-bar-3 mt-1 menu--icon-open-bar-3"></div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

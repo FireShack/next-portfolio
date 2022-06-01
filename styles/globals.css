@@ -3,6 +3,9 @@ body {
   /* overflow-y: hidden; */
   overflow-x: hidden;
 }
+.container-styled {
+  padding: 3rem;
+}
 body::-webkit-scrollbar {
   width: 0.5rem;
 }
