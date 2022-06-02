@@ -1,12 +1,12 @@
+import { useContext } from "react";
+import { UseAppContext } from "../../context/state";
 import Image from "next/image";
 import { LanguagesSelector } from "../languages/LanguagesSelector";
 import SideBar from "../SideBar";
-import designAv from "../images/casual-life-3d-young-man-holding-chin-and-taking-notes-in-notebook.png";
 import teamAv from "../images/casual-life-3d-young-man-sitting-in-front-of-laptop.png";
+import studyAv from "../images/casual-life-3d-young-man-surrounded-by-gadgets-taking-notes.png";
 import workingAv from "../images/casual-life-3d-young-man-in-headset-using-computer.png";
-import blob from "../images/blob (1).svg";
-import { useContext } from "react";
-import { UseAppContext } from "../../context/state";
+import { Skills } from "./Skills";
 
 export const Description = () => {
   const { language } = useContext(UseAppContext);
@@ -60,7 +60,7 @@ export const Description = () => {
     <div>
       <div className="row">
         <SideBar />
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center avatar--background-image">
+        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center avatarAbout--background-image">
           <Image src={teamAv} alt="working" />
         </div>
         <div className="col-12 col-md-5 text-center d-flex align-items-center">
@@ -115,11 +115,8 @@ export const Description = () => {
       <div className="row">
         <div className="col-12 col-md-5 text-center d-flex align-items-center">
           <div className="">
-            <div>
-              <LanguagesSelector />
-            </div>
             <div className="text-center mb-5 mt-3">
-              <h2 className="">Who i am?</h2>
+              <h2 className="">Where i'm now?</h2>
             </div>
             <div className="">
               {
@@ -161,9 +158,12 @@ export const Description = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center avatar--background-image">
-          <Image src={teamAv} alt="working" />
+        <div className="col-12 col-md-6 d-flex align-items-center justify-content-end avatarConst--background-image">
+          <Image src={studyAv} alt="studying" />
         </div>
+      </div>
+      <div className="row">
+        <Skills />
       </div>
     </div>
   );

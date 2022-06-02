@@ -65,7 +65,7 @@ const Banner = () => {
           )}
         </div>
       </div>
-      <div className="col-12 col-md-6 d-flex align-items-end justify-content-end homeavatar--background-image">
+      <div className="col-12 col-md-6 d-flex align-items-end justify-content-center avatarHome--background-image">
         <Image src={meAv} alt="me" />
       </div>
     </div>

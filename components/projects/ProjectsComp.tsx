@@ -4,8 +4,7 @@ import SideBar from "../SideBar";
 
 export const ProjectsComp: NextComponentType = () => {
   return (
-    <div>
-      <LanguagesSelector />
+    <div className="container-styled transition-opacity-effect">
       <SideBar />
     </div>
   );
