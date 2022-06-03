@@ -371,11 +371,65 @@
   border-radius: 10px;
   color: black;
   text-align: center;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .projects-btn:hover {
   background-color: #0070f3;
   color: white;
-  transition: .4s;
+  transition: 0.4s;
+}
+
+.contact--form-box{
+  border-radius: 15px;
+}
+
+.contact--title-und {
+  width: 100px;
+  border-bottom: 0.5px solid #0070f3;
+}
+
+.contact--form-input {
+  padding: 10px !important;
+  background-color: #0070f11a;
+  border: none;
+  border-radius: 18px;
+}
+
+.contact--form-input::placeholder {
+  color: #0070f3;
+}
+
+.contact--form-input:focus {
+  outline: none;
+}
+
+.contact--form-btn {
+  border: 1px solid #0070f3;
+  border-radius: 20px;
+  color: black;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.contact--form-btn:focus {
+  outline: none;
+}
+
+.contact--form-btn:hover {
+  background-color: #0070f3;
+  color: white;
+  transition: 0.4s;
+}
+
+.contact-info {
+  background-image: url("../components/images/blob\ \(1\).svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.contact--icon-border {
+  border: 0.5px solid #0070f3 !important;
+  border-radius: 50px;
 }

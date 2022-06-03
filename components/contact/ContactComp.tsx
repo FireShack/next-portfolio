@@ -1,11 +1,9 @@
-import { LanguagesSelector } from "../languages/LanguagesSelector";
-import SideBar from "../SideBar";
+import { Form } from "./Form";
 
 export const ContactComp = () => {
   return (
-    <div>
-      <LanguagesSelector />
-      <SideBar />
+    <div className="container-styled">
+        <Form />      
     </div>
   );
 };
