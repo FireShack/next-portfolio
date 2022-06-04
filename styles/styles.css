@@ -45,6 +45,21 @@
   border-top-left-radius: 100%;
 }
 
+.sidebar--cv-btn {
+  padding: 10px;
+  background-color: #0084ff;
+  border: 1px solid #0084ff;
+  border-radius: 20px;
+  transition: 0.2s;
+  color: white;
+}
+
+.sidebar--cv-btn:hover {
+  transition: 0.2s;
+  background-color: transparent;
+  color: #000;
+}
+
 .btn--switch-container {
   height: 1.5rem;
   width: 4rem;
@@ -175,13 +190,11 @@
 .menu--icon-open-bar-1 {
   transition: 0.4s;
   margin: 1rem 0 0 0 !important;
-  transform: translateX(1rem);
   transform: rotate(-45deg);
 }
 .menu--icon-open-bar-2 {
   transition: 0.4s;
   margin: -5px 0 0 0 !important;
-  transform: translateX(1rem);
   transform: rotate(45deg);
 }
 .menu--icon-open-bar-3 {
@@ -191,19 +204,19 @@
 
 .menu--icon-bar-1 {
   background-color: #000;
-  height: 5px;
+  height: 4px;
   width: 35px;
   transition: 0.4s;
 }
 .menu--icon-bar-2 {
   background-color: #000;
-  height: 5px;
+  height: 4px;
   width: 35px;
   transition: 0.4s;
 }
 .menu--icon-bar-3 {
   transition: 0.4s;
-  height: 5px;
+  height: 4px;
   width: 35px;
   background-color: #000;
 }
@@ -300,19 +313,15 @@
   background-color: #000;
 }
 
-/* .icons--bubble-hard {
-  height: 15rem;
-  background-image: url("../components/images/blob\ \(9\).svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+.about--text-color-1 {
+  text-shadow: 2px 5px 5px #00cc0a;
 }
-
-.icons--bubble-soft {
-  height: 15rem;
-  background-image: url("../components/images/blob\ \(8\).svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.about--text-color-2 {
+  text-shadow: 2px 5px 5px #535353;
+}
+.about--text-color-3 {
+  text-shadow: 2px 5px 5px #cf0f0f;
+}
 
 .transition-opacity-effect {
   animation-name: smooth-transition-effect;
@@ -361,7 +370,7 @@
 }
 
 .labels--badge {
-  background-color: #0070f3;
+  background-color: #19589b;
   color: white;
   font-size: 12px;
 }
@@ -380,7 +389,7 @@
   transition: 0.4s;
 }
 
-.contact--form-box{
+.contact--form-box {
   border-radius: 15px;
 }
 
@@ -429,7 +438,3 @@
   color: white;
 }
 
-.contact--icon-border {
-  border: 0.5px solid #0070f3 !important;
-  border-radius: 50px;
-}

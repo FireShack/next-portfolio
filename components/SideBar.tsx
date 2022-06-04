@@ -104,7 +104,8 @@ const SideBar: NextComponentType = () => {
                 <Link href={link}>
                   <a>
                     <div className="row mt-5 border rounded-pill p-2 sidebar--icon-bg">
-                      {icon}
+                      <div className="col-3">{icon}</div>
+                      <div className="col-9 text-center">{name}</div>
                     </div>
                   </a>
                 </Link>
@@ -114,14 +115,14 @@ const SideBar: NextComponentType = () => {
         </>
       </div>
       <div className="d-flex justify-content-center mt-1 fixed-top">
-        <button className="btn btn-outline-dark">
+        <button className="sidebar--cv-btn">
           CV <AiOutlineDownload />
         </button>
       </div>
       <div className="menu-icon d-flex justify-content-end mt-1 fixed-top">
         {/* <BiMenuAltRight size={45} /> */}
         <div
-          className="menu--icon-transition flex-row"
+          className="menu--icon-transition"
           role="button"
           onClick={() => setOpen(open ? false : true)}
         >

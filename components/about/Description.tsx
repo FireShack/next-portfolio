@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { UseAppContext } from "../../context/state";
 import Image from "next/image";
+import { UseAppContext } from "../../context/state";
 import { LanguagesSelector } from "../languages/LanguagesSelector";
 import SideBar from "../SideBar";
+import { Skills } from "./Skills";
 import teamAv from "../images/casual-life-3d-young-man-sitting-in-front-of-laptop.png";
 import studyAv from "../images/casual-life-3d-young-man-surrounded-by-gadgets-taking-notes.png";
-import workingAv from "../images/casual-life-3d-young-man-in-headset-using-computer.png";
-import { Skills } from "./Skills";
+import ubication from "../images/casual-life-3d-pink-location-marker.png";
+import it from "../images/it.svg";
 
 export const Description = () => {
   const { language } = useContext(UseAppContext);
@@ -72,10 +73,6 @@ export const Description = () => {
               <h2 className="">Who i am?</h2>
             </div>
             <div className="">
-              {
-                // Colocar un map
-              }
-
               {language === "en" && (
                 <div className="">
                   <p>
@@ -160,6 +157,18 @@ export const Description = () => {
         </div>
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-end avatarConst--background-image">
           <Image src={studyAv} alt="studying" />
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <div className="col-12 col-md-4">
+          <Image src={ubication} alt="ubication" />
+        </div>
+        <div className="col-12 col-md-4 d-flex justify-content-center align-items-center">
+          <h1>
+            <span className="about--text-color-1">ALESSA</span>
+            <span className="about--text-color-2">NDRIA,</span>
+            <span className="about--text-color-3"> ITALY</span>
+          </h1>
         </div>
       </div>
       <div className="row">
