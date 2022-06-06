@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import { UseAppContext } from "../../context/state";
 import { LanguagesSelector } from "../languages/LanguagesSelector";
@@ -7,53 +7,45 @@ import { Skills } from "./Skills";
 import teamAv from "../images/casual-life-3d-young-man-sitting-in-front-of-laptop.png";
 import studyAv from "../images/casual-life-3d-young-man-surrounded-by-gadgets-taking-notes.png";
 import ubication from "../images/casual-life-3d-pink-location-marker.png";
+import es from "../images/es.svg";
 import it from "../images/it.svg";
+import us from "../images/us.svg";
 
 export const Description = () => {
-  const { language } = useContext(UseAppContext);
-
-  const aboutMe = [
+  const [language, setLang]: [string, Function] = useState("en");
+  const lang = [
     {
-      title: "Who i am?",
-      en: ` English: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
-      it: ` Italiano: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
-      es: ` Spanish: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
+      es: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={es}
+          height={25}
+          width={25}
+          onClick={() => setLang("es")}
+        />
+      ),
     },
     {
-      title: "And.. your skills?",
-      en: ` English: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
-      it: ` Italiano: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
-      es: ` Spanish: In few words Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Quibusdam illo error, debitis quod esse
-      quidem molestias sapiente praesentium officia at laborum
-      similique mollitia dignissimos. Exercitationem? sapiente
-      praesentium officia at laborum similique mollitia dignissimos.
-      Exercitationem?`,
+      it: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={it}
+          height={25}
+          width={25}
+          onClick={() => setLang("it")}
+        />
+      ),
+    },
+    {
+      en: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={us}
+          height={25}
+          width={25}
+          onClick={() => setLang("en")}
+        />
+      ),
     },
   ];
 
@@ -64,99 +56,88 @@ export const Description = () => {
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center avatarAbout--background-image">
           <Image src={teamAv} alt="working" />
         </div>
-        <div className="col-12 col-md-5 text-center d-flex align-items-center">
+        <div className="col-12 col-md-5 d-flex align-items-center">
           <div className="">
-            <div>
-              <LanguagesSelector />
-            </div>
-            <div className="text-center mb-5 mt-3">
-              <h2 className="">Who i am?</h2>
+            <div className="d-flex justify-content-center mt-2">
+              <div className="bar--language-style shadow-sm d-flex justify-content-around">
+                {lang.map((lan, i) => {
+                  return (
+                    <div key={i}>
+                      {lan.en}
+                      {lan.it}
+                      {lan.es}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <div className="">
               {language === "en" && (
                 <div className="">
+                  <div className=" mb-5 mt-3">
+                    <h2 className="">Who i am?</h2>
+                  </div>
                   <p>
-                    English: In few words Lorem ipsum, dolor sit amet
-                    consectetur adipisicing elit. Quibusdam illo error, debitis
-                    quod esse quidem molestias sapiente praesentium officia at
-                    laborum similique mollitia dignissimos. Exercitationem?
-                    sapiente praesentium officia at laborum similique mollitia
-                    dignissimos. Exercitationem?
+                    In few words, i'm a man who loves to develop high quality
+                    web apps. I'm specializing in JavaScript/TypeScript techs,
+                    like Reactjs, Nextjs or Nodejs. I also developed projects
+                    with Python. I was born in Argentina but i'm italian
+                    cittizen and i live in Italy now. I love to learn new
+                    things, and if there are about software world, better!
+                    <br /> <br />
+                    For me, the continue learning is very important. That's why
+                    i'm on the way to become an
+                    <span className="fw-bold">
+                      Informatic/Electronic Engineer
+                    </span>
                   </p>
                 </div>
               )}
               {language === "it" && (
                 <div className="">
+                  <div className="mb-5 mt-3">
+                    <h2 className="">Chi sono io?</h2>
+                  </div>
                   <p>
-                    Italiano: Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Quibusdam illo error, debitis quod esse
-                    quidem molestias sapiente praesentium officia at laborum
-                    similique mollitia dignissimos. Exercitationem?
+                    In poche parole, sono un uomo che ama sviluppare "high
+                    quality" web apps. Mi sto specializzando in
+                    JavaScript/TypeScript techs, come Reactjs, Nextjs oppure
+                    Nodejs. Ho sviluppato proggeti anche con Python. Sono nato
+                    in Argentina, ma sono cittadino italiano e addeso vivo in
+                    Italia. Mi piace imparare cose nuove, e se sono di software,
+                    meglio!
+                    <br /> <br />
+                    Per me il l'apprendimento continuo è molto importante. Ecco
+                    perchè sono in il percorso di diventare
+                    <span className="fw-bold">
+                      Ingegniero Informatico/Elettronico
+                    </span>
                   </p>
                 </div>
               )}
               {language === "es" && (
                 <div className="">
+                  <div className="mb-5 mt-3">
+                    <h2 className="">¿Quién soy?</h2>
+                  </div>
                   <p>
-                    Español: Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Quibusdam illo error, debitis quod esse quidem
-                    molestias sapiente praesentium officia at laborum similique
-                    mollitia dignissimos. Exercitationem?
+                    En pocas palabras, soy una persona que ama desarrollar web
+                    apps robustas. Me estoy especializando en
+                    JavaScript/TypeScript techs, como Reactjs, Nextjs o Nodejs.
+                    También he desarrollado proyectos con Python. Nací en
+                    Argentina, pero soy ciudadano italiano, por eso ahora vivo
+                    en Italia. Me gusta aprender cosas nuevas, y si son sobre el
+                    mundo del software, mejor! <br /> <br />
+                    Para mí el aprendizaje continuo es muy importante. Es por
+                    eso que estoy en camino a convertirme en
+                    <span className="fw-bold">
+                      Ingeniero Informatico/Electrónico
+                    </span>
                   </p>
                 </div>
               )}
             </div>
           </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12 col-md-5 text-center d-flex align-items-center">
-          <div className="">
-            <div className="text-center mb-5 mt-3">
-              <h2 className="">Where i'm now?</h2>
-            </div>
-            <div className="">
-              {
-                // Colocar un map
-              }
-
-              {language === "en" && (
-                <div className="">
-                  <p>
-                    English: In few words Lorem ipsum, dolor sit amet
-                    consectetur adipisicing elit. Quibusdam illo error, debitis
-                    quod esse quidem molestias sapiente praesentium officia at
-                    laborum similique mollitia dignissimos. Exercitationem?
-                    sapiente praesentium officia at laborum similique mollitia
-                    dignissimos. Exercitationem?
-                  </p>
-                </div>
-              )}
-              {language === "it" && (
-                <div className="">
-                  <p>
-                    Italiano: Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Quibusdam illo error, debitis quod esse
-                    quidem molestias sapiente praesentium officia at laborum
-                    similique mollitia dignissimos. Exercitationem?
-                  </p>
-                </div>
-              )}
-              {language === "es" && (
-                <div className="">
-                  <p>
-                    Español: Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Quibusdam illo error, debitis quod esse quidem
-                    molestias sapiente praesentium officia at laborum similique
-                    mollitia dignissimos. Exercitationem?
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-end avatarConst--background-image">
-          <Image src={studyAv} alt="studying" />
         </div>
       </div>
       <div className="row d-flex justify-content-center">

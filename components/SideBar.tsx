@@ -1,5 +1,5 @@
 import type { NextComponentType } from "next";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { GiUfo } from "react-icons/gi";
@@ -9,11 +9,11 @@ import { MdWorkOutline } from "react-icons/md";
 import { RiMailSendLine } from "react-icons/ri";
 import { FaRegNewspaper } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
+import { UseAppContext } from "../context/state";
 
 const SideBar: NextComponentType = () => {
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
-
   const navItems = [
     {
       name: "Home",
@@ -37,7 +37,7 @@ const SideBar: NextComponentType = () => {
     },
     {
       name: "Blog",
-      link: "/Contact",
+      link: "/Blog",
       icon: <FaRegNewspaper size={25} />,
     },
   ];
@@ -47,8 +47,8 @@ const SideBar: NextComponentType = () => {
       <div
         className={
           !open
-            ? "col-3 col-md-2 border-end sidebar sidebar-close fixed-top"
-            : "col-3 col-md-2 border-end sidebar sidebar-open fixed-top"
+            ? "col-4 col-md-2 border-end sidebar sidebar-close fixed-top"
+            : "col-4 col-md-2 border-end sidebar sidebar-open fixed-top"
         }
       >
         <div className="d-flex justify-content-evenly mt-3">
@@ -96,28 +96,30 @@ const SideBar: NextComponentType = () => {
           </div>
         </div>
 
-        <>
-          {navItems.map((item) => {
-            const { name, link, icon } = item;
-            return (
-              <div className="sidebar-link-items" key={name}>
-                <Link href={link}>
-                  <a>
-                    <div className="row mt-5 border rounded-pill p-2 sidebar--icon-bg">
-                      <div className="col-3">{icon}</div>
-                      <div className="col-9 text-center">{name}</div>
-                    </div>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
-        </>
+        {navItems.map((item) => {
+          const { name, link, icon } = item;
+          return (
+            <div className="sidebar-link-items" key={name}>
+              <Link href={link}>
+                <a>
+                  <div className="row mt-5 p-2 sidebar--icon-bg">
+                    <div className="col-3">{icon}</div>
+                    <div className="col-9 text-center">{name}</div>
+                  </div>
+                </a>
+              </Link>
+            </div>
+          );
+        })}
       </div>
       <div className="d-flex justify-content-center mt-1 fixed-top">
-        <button className="sidebar--cv-btn">
+        <a
+          href="./images/87921027.jpg"
+          className="sidebar--cv-btn"
+          download
+        >
           CV <AiOutlineDownload />
-        </button>
+        </a>
       </div>
       <div className="menu-icon d-flex justify-content-end mt-1 fixed-top">
         {/* <BiMenuAltRight size={45} /> */}

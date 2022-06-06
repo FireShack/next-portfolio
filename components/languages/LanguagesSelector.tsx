@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import { NextComponentType } from "next";
 import Image from "next/image";
 import es from "../images/es.svg";
 import it from "../images/it.svg";
 import us from "../images/us.svg";
-import { UseAppContext } from "../../context/state";
 
 export const LanguagesSelector: NextComponentType = () => {
   const [language, setLanguage] = useState("en");

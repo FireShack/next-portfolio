@@ -1,74 +1,160 @@
+import { useContext, useState } from "react";
 import Image from "next/image";
 import SideBar from "../SideBar";
-import meIn from "../images/photo-1570295999919-56ceb5ecca61 (1).avif";
+import me from "../images/87921027.jpg";
 import meAv from "../images/casual-life-3d-boy-sitting-in-front-of-laptop.png";
 import { LanguagesSelector } from "../languages/LanguagesSelector";
-import { useContext } from "react";
-import { UseAppContext } from "../../context/state";
 import { GiTronArrow } from "react-icons/gi";
+import { UseAppContext } from "../../context/state";
+import es from "../images/es.svg";
+import it from "../images/it.svg";
+import us from "../images/us.svg";
+import Link from "next/link";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const Banner = () => {
-  const { language } = useContext(UseAppContext);
+  const theme = useContext(UseAppContext);
+  const [language, setLang] = useState("en");
+  const lang = [
+    {
+      es: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={es}
+          height={25}
+          width={25}
+          onClick={() => setLang("es")}
+        />
+      ),
+    },
+    {
+      it: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={it}
+          height={25}
+          width={25}
+          onClick={() => setLang("it")}
+        />
+      ),
+    },
+    {
+      en: (
+        <Image
+          className="bar--language-flag rounded-circle"
+          src={us}
+          height={25}
+          width={25}
+          onClick={() => setLang("en")}
+        />
+      ),
+    },
+  ];
+
   return (
     <div>
       <div className="row">
         <SideBar />
       </div>
       <div className="row">
-        <div className="col-12 col-md-6 d-flex align-items-end justify-content-center avatarHome--background-image">
-          <Image src={meAv} alt="me" />
+        <div className="col-12 col-md-6 d-flex align-items-end justify-content-center avatarHome--background-light">
+          <Image src={me} className="rounded-circle" alt="me" />
         </div>
-        <div className="col-12 col-md-6 text-center d-flex align-items-center">
+        <div className="col-12 col-md-6 text-center d-flex align-items-center justify-content-center">
           <div className="flex-column">
             <small className="text-muted mt-1">Select your language</small>
             <div className="icon--transform-rotate">
               <GiTronArrow size={30} color="grey" />
             </div>
-            <div>
-              <LanguagesSelector />
-            </div>
-            <div className="text-center mb-5 mt-3">
-              <h2>Hi!</h2>
+            <div className="d-flex justify-content-center mt-2">
+              <div className="bar--language-style shadow-sm d-flex justify-content-around">
+                {lang.map((lan, i) => {
+                  return (
+                    <div key={i}>
+                      {lan.en}
+                      {lan.it}
+                      {lan.es}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {language === "en" && (
               <div className="">
+                <div className="text-center mb-5 mt-3 text-primary">
+                  <h2>Hi! I'm Franco 👋</h2>
+                </div>
                 <p>
-                  English: Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Quibusdam illo error, debitis quod esse quidem molestias
-                  sapiente praesentium officia at laborum similique mollitia
-                  dignissimos. Exercitationem?
+                  I'm a fullstack developer, typing code with technologies like
+                  JavaScript, TypeScript or Python. You can read about
+                  <Link href="/About">
+                    <a className="text-primary"> my skills here. </a>
+                  </Link>
+                  Now i'm focus on developing robust apps, crossing over a
+                  modern design with good ideas that solves problems
                 </p>
-                <button className="btn btn-outline-dark rounded-0 w-100 p-2 mt-2">
-                  More about me
-                </button>
+                <div className="d-flex justify-content-around">
+                  <Link href="/Contact">
+                    <a className="btn banner-btn w-50 p-2 mt-2">Hire me!</a>
+                  </Link>
+                </div>
               </div>
             )}
             {language === "it" && (
               <div className="">
+                <div className="text-center mb-5 mt-3 text-primary">
+                  <h2>Ciao! Sono Franco 👋</h2>
+                </div>
                 <p>
-                  Italiano: Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Quibusdam illo error, debitis quod esse quidem molestias
-                  sapiente praesentium officia at laborum similique mollitia
-                  dignissimos. Exercitationem?
+                  Sono un sviluppatore fullstack, utilizzo tecnologie come
+                  JavaScript, TypeScript oppure Python. Puoi leggere su di me{" "}
+                  <Link href="/About">
+                    <a className="text-primary"> me skills qui. </a>
+                  </Link>
+                  Ora sono concentrato in sviluppare apps robusti, unendo il
+                  disegno moderno con buone idee che possono risolvere problemi
                 </p>
-                <button className="btn btn-outline-dark rounded-0 w-100 p-2 mt-2">
-                  More about me
-                </button>
+                <div className="d-flex justify-content-around">
+                  <Link href="/About">
+                    <a className="banner-btn w-50 p-2 mt-2">Contattarmi!</a>
+                  </Link>
+                </div>
               </div>
             )}
             {language === "es" && (
               <div className="">
+                <div className="text-center mb-5 mt-3 text-primary">
+                  <h2>Hola! Soy Franco 👋</h2>
+                </div>
                 <p>
-                  Español: Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Quibusdam illo error, debitis quod esse quidem molestias
-                  sapiente praesentium officia at laborum similique mollitia
-                  dignissimos. Exercitationem?
+                  Soy un desarrollador fullstack, utilizo tecnologias como
+                  JavaScript, TypeScript o Python. Lee sobre
+                  <Link href="/About">
+                    <a className="text-primary"> mis skills aqui. </a>
+                  </Link>
+                  En este momento estoy enfocado en desarrollar apps robustas,
+                  uniendo el diseño moderno con grandes ideas que pueden
+                  resolver problemas
                 </p>
-                <button className="btn btn-outline-dark rounded-0 w-100 p-2 mt-2">
-                  More about me
-                </button>
+                <div className="d-flex justify-content-around">
+                  <Link href="/About">
+                    <a className="banner-btn w-50 p-2 mt-2">Contactame!</a>
+                  </Link>
+                </div>
               </div>
             )}
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="d-flex justify-content-end">
+          <div className="d-flex flex-column">
+            <a href="https://github.com/FireShack">
+              <BsGithub color="171515" size={30} />
+            </a>
+            <a href="" className="mt-2">
+              <BsLinkedin color="0072b1" size={30} />
+            </a>
           </div>
         </div>
       </div>

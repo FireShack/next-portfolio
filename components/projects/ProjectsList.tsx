@@ -13,92 +13,86 @@ export const ProjectsList = () => {
       name: "Urban INK",
       type: "Ecommmerce",
       labels: ["reactjs", "nodejs", "firestore"],
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+      description: `
+      A modern and very complete E-commerce developed with the last technologies. 
+      If you are a client, you can use Urban INK in all your favorites devices and 
+      buy a lot of pretty clothes, footwear and accessories. If you are an administrator, 
+      in the Admin panel you can see all your ecommerce data: charts with statistics, 
+      totals earned, manage your products and much more.  
+        `,
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack?tab=repositories",
         icon: <SiGithub size={25} />,
       },
       img: ecommerce,
-      link: "https://github.com/FireShack/urbanink",
     },
     {
       name: "MyJournal",
       type: "Notes App",
       labels: ["reactjs", "firestore", "notes"],
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+        "MyJournal is an app for those who want to write and have by FREE all their notes in a website.",
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack/MyJournal",
         icon: <SiGithub size={25} />,
       },
       img: journal,
-      link: "https://github.com/FireShack/MyJournal",
     },
     {
       name: "REST Typescript server (SQL)",
       type: "http server",
       labels: ["typescript", "sql", "server"],
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+        "This is a complete rest server, entirely coded with TypeScript. Is a ready to use server to authenticate users. In this case, i used MySQL and Sequalize for handle all users into the DB. It also includes validations, middlewares and configs that makes this server a good starting shell for your next project.",
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack/rest-server-vTS",
         icon: <SiGithub size={25} />,
       },
       img: server,
-      link: "https://github.com/FireShack/rest-server-vTS",
     },
     {
       name: "Food.now",
       type: "Food order app",
       labels: ["vanilla-javascript"],
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+        "Entire food ordering app developed with vanilla JS. This app can be used as a template for an ecommerce or as an app for a food market or a bar. Styled with Bootstrap 5.0. Includes an API hosted with JSON-server.",
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack/foodApp",
         icon: <SiGithub size={25} />,
       },
       img: food,
-      link: "https://github.com/FireShack/foodApp",
     },
     {
       name: "REST Javascript server (MongoDB)",
       type: "http server",
       labels: ["javascript", "mongodb", "server"],
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+        "This is a ready to use server. You will be able to make http request for the endpoints that you want. Feel free of clone it and use it. All this server was coded with node.js, the Javascript runtime enviroment, and Express. The last update includes a complete files upload functionality, completely tested and validated. This services works with Cloudinary.",
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack/foodApp",
         icon: <SiGithub size={25} />,
       },
       img: server,
-      link: "https://github.com/FireShack/rest-server",
     },
     {
       name: "Neighborhoods System",
       type: "Managment system",
       labels: ["python", "tkinter", "sql"],
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
-      github: {
-        name: "https://github.com/FireShack?tab=repositories",
-        icon: <SiGithub size={25} />,
-      },
+        "This project was part of digitalization process. A modernization to migrate all data from paper to a database. They also can manage infractions and have a detailed information about all neighbors.",
       img: hood,
-      link: "https://github.com/FireShack/rest-server",
     },
     {
       name: "REST Typescript server (MongoDB)",
       type: "http server",
       labels: ["typescript", "mongodb", "server"],
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci at blanditiis voluptate magni possimus suscipit.",
+      description: `This is a complete rest server, entirely coded with TypeScript. Is a ready to use server to server apps like a social media app. Was thinked to serve a blog app, but changing some names and adding a few new features, you will be alowed to serve another app like this.
+        In this case, i used MongoDB and Mongoose for handle all data into the DB. It also includes validations, middlewares, interface and configs that makes this server a good starting shell for your next project.`,
       github: {
-        name: "https://github.com/FireShack?tab=repositories",
+        link: "https://github.com/FireShack/rest-server-vTS-MongoDB",
         icon: <SiGithub size={25} />,
       },
       img: server,
-      link: "https://github.com/FireShack/rest-server",
     },
   ];
 
@@ -110,23 +104,16 @@ export const ProjectsList = () => {
       <div className="text-center mt-4">
         <h1>My selected projects</h1>
       </div>
-      <div className="text-center">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque <br />
-          distinctio quasi at. Soluta sequi iste aperiam, aliquid laudantium
-          <br />
-          voluptates ducimus deserunt, facere necessitatibus accusamus facilis!
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas magni
-          <br />
-          inventore minima ipsam, alias iure. <br />
-        </p>
+      <div className="d-flex justify-content-center">
+        <div className="col-12 col-md-6 text-center">
+          <p>Here are some examples of my work. All them made with ❤️.</p>
+        </div>
       </div>
       <div className="row d-flex justify-content-around align-items-center mt-4">
         {projects.map((project) => {
           const { name, labels, description, type, github, img } = project;
           return (
-            <>
+            <div key={name}>
               <div className="col-12 col-md-4 mt-3">
                 <Image src={img} alt={type} className="rounded-pill" />
               </div>
@@ -137,7 +124,10 @@ export const ProjectsList = () => {
                 <div className="d-flex justify-content-center">
                   {labels.map((label) => {
                     return (
-                      <div className="labels--badge p-2 mx-1 rounded-pill text-center">
+                      <div
+                        className="labels--badge p-2 mx-1 rounded-pill text-center"
+                        key={label}
+                      >
                         {label}
                       </div>
                     );
@@ -148,12 +138,19 @@ export const ProjectsList = () => {
                   <div className="p-2">{description}</div>
                 </div>
                 <div className="d-flex justify-content-center mt-2">
-                  <a href={`${github.name}`} className="projects-btn w-100 p-2">
-                    View it on {github.icon}
-                  </a>
+                  {github ? (
+                    <a
+                      href={`${github.link}`}
+                      className="btn projects-btn w-100 p-2"
+                    >
+                      View it on {github.icon}
+                    </a>
+                  ) : (
+                    "No Github public repository"
+                  )}
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

@@ -12,6 +12,8 @@
 }
 
 .sidebar {
+  background-color: #fff;
+  border-radius: 15px;
   height: 100vh;
 }
 
@@ -36,7 +38,8 @@
 .sidebar-link-items a div:hover {
   transition: 0.2s ease-in-out;
   background-color: #0070f3;
-  color: #f1faee;
+  color: #ffffff;
+  border-radius: 10px;
 }
 
 .image-profile-home {
@@ -47,17 +50,16 @@
 
 .sidebar--cv-btn {
   padding: 10px;
-  background-color: #0084ff;
-  border: 1px solid #0084ff;
+  background-color: transparent;
+  border: 1px solid #0070f3;
   border-radius: 20px;
   transition: 0.2s;
-  color: white;
 }
 
 .sidebar--cv-btn:hover {
   transition: 0.2s;
-  background-color: transparent;
-  color: #000;
+  background-color: #0070f3;
+  color: #ffff;
 }
 
 .btn--switch-container {
@@ -99,6 +101,18 @@
     /* transform: rotate(0deg); */
     transform: rotate(360deg);
   }
+}
+
+.banner-btn {
+  background-color: #fff;
+  border: 1px solid #0070f3;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
+}
+
+.banner-btn:hover {
+  background-color: #0070f3;
+  color: #ffffff;
 }
 
 .icon--transition-scale {
@@ -159,8 +173,13 @@
   transform: rotate(-112deg);
 }
 
-.avatarHome--background-image {
+.avatarHome--background-light {
   background-image: url("../components/images/blob\ \(2\).svg");
+  background-repeat: no-repeat;
+}
+
+.avatarHome--background-dark {
+  background-image: url("../components/images/blob\ \(4\).svg");
   background-repeat: no-repeat;
 }
 
@@ -414,6 +433,7 @@
 }
 
 .contact--form-btn {
+  background-color: #ffff;
   border: 1px solid #0070f3;
   border-radius: 20px;
   color: black;
@@ -437,4 +457,3 @@
   background-position: center;
   color: white;
 }
-

@@ -1,29 +1,15 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 
 type providerProps = {
-  children: React.ReactNode;
+  children: JSX.Element | JSX.Element[];
 };
 
-export const initState = {
-  language: "en",
-  theme: "light",
-};
+export const UseAppContext = createContext([{}]);
 
-export const UseAppContext = createContext(initState);
-
-const contextReducer = (state: string, action: string) => {
-  switch (action) {
-    case "change-language":
-      return {};
-
-    default:
-      return state;
-  }
-};
-
-export const ContextProvider = ({ children }: providerProps) => {
+export const ThemeProvider = ({ children }: providerProps) => {
+  const [theme, setTheme] = useState({ theme: "light" });
   return (
-    <UseAppContext.Provider value={initState}>
+    <UseAppContext.Provider value={[theme, setTheme]}>
       {children}
     </UseAppContext.Provider>
   );
