@@ -5,8 +5,19 @@ import { FiSend } from "react-icons/fi";
 import contactAv from "../images/casual-life-3d-man-talking-on-the-phone.png";
 import Image from "next/image";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { useState } from "react";
 
 export const Form = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const userData = {
+    name,
+    email,
+    msg,
+  };
+
   return (
     <>
       <div className="row">
@@ -33,7 +44,13 @@ export const Form = () => {
             </div>
           </div>
 
-          <div className="col-12 col-md-5 shadow-lg contact--form-box">
+          <form
+            className="col-12 col-md-5 shadow-lg contact--form-box"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log(userData);
+            }}
+          >
             <div className="text-center p-2">
               <h2>Send me an email</h2>
             </div>
@@ -42,6 +59,7 @@ export const Form = () => {
                 type="text"
                 className="contact--form-input p-2"
                 placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="row p-2">
@@ -49,16 +67,18 @@ export const Form = () => {
                 type="mail"
                 className="contact--form-input p-2"
                 placeholder="example@addres.com"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="row p-2">
               <textarea
                 className="contact--form-input p-2"
                 placeholder="Message"
+                onChange={(e) => setMsg(e.target.value)}
               ></textarea>
             </div>
             <div className="row mt-3 p-2 d-flex justify-content-center">
-              <button className="contact--form-btn p-2 w-75">
+              <button type="submit" className="contact--form-btn p-2 w-75">
                 Send <FiSend size={20} />
               </button>
             </div>
@@ -86,7 +106,7 @@ export const Form = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>

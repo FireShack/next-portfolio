@@ -109,51 +109,52 @@ export const ProjectsList = () => {
           <p>Here are some examples of my work. All them made with ❤️.</p>
         </div>
       </div>
-      <div className="row d-flex justify-content-around align-items-center mt-4">
-        {projects.map((project) => {
-          const { name, labels, description, type, github, img } = project;
-          return (
-            <div key={name}>
-              <div className="col-12 col-md-4 mt-3">
-                <Image src={img} alt={type} className="rounded-pill" />
+      {projects.map((project) => {
+        const { name, labels, description, type, github, img } = project;
+        return (
+          <div
+            className="row d-flex justify-content-around align-items-center mt-3"
+            key={name}
+          >
+            <div className="col-12 col-md-6 col-lg-5 mt-3">
+              <Image src={img} alt={type} className="rounded-pill" />
+            </div>
+            <div className="col-12 col-md-6 col-md-7 card-projects p-3 rounded border shadow">
+              <div className="fw-bold text-center">
+                <h4>{name}</h4>
               </div>
-              <div className="col-12 col-md-6 card-projects p-3 rounded border shadow">
-                <div className="fw-bold text-center">
-                  <h4>{name}</h4>
-                </div>
-                <div className="d-flex justify-content-center">
-                  {labels.map((label) => {
-                    return (
-                      <div
-                        className="labels--badge p-2 mx-1 rounded-pill text-center"
-                        key={label}
-                      >
-                        {label}
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="mt-3">
-                  <h6 className="text-center">What about this project?</h6>
-                  <div className="p-2">{description}</div>
-                </div>
-                <div className="d-flex justify-content-center mt-2">
-                  {github ? (
-                    <a
-                      href={`${github.link}`}
-                      className="btn projects-btn w-100 p-2"
+              <div className="d-flex justify-content-center">
+                {labels.map((label) => {
+                  return (
+                    <div
+                      className="labels--badge p-2 mx-1 rounded-pill text-center"
+                      key={label}
                     >
-                      View it on {github.icon}
-                    </a>
-                  ) : (
-                    "No Github public repository"
-                  )}
-                </div>
+                      {label}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-3">
+                <h6 className="text-center">What about this project?</h6>
+                <div className="p-2">{description}</div>
+              </div>
+              <div className="d-flex justify-content-center mt-2">
+                {github ? (
+                  <a
+                    href={`${github.link}`}
+                    className="btn projects-btn w-100 p-2"
+                  >
+                    View it on {github.icon}
+                  </a>
+                ) : (
+                  "No Github public repository"
+                )}
               </div>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
