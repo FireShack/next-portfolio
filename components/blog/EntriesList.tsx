@@ -1,4 +1,3 @@
-import axios from "axios";
 import SideBar from "../SideBar";
 import { useEffect } from "react";
 

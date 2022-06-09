@@ -65,7 +65,6 @@ export const Form = () => {
           statusMsg: "Something went wrong, try again!",
         });
         resetState();
-        // console.log(res);
       })
       .catch(() =>
         setStatus({
