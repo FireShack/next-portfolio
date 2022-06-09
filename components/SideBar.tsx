@@ -1,5 +1,5 @@
+import { useState } from "react";
 import type { NextComponentType } from "next";
-import { useContext, useState } from "react";
 import Link from "next/link";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 import { GiUfo } from "react-icons/gi";
@@ -9,7 +9,6 @@ import { MdWorkOutline } from "react-icons/md";
 import { RiMailSendLine } from "react-icons/ri";
 import { FaRegNewspaper } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
-import { UseAppContext } from "../context/state";
 
 const SideBar: NextComponentType = () => {
   const [theme, setTheme] = useState("light");
@@ -48,7 +47,7 @@ const SideBar: NextComponentType = () => {
         className={
           !open
             ? "col-4 col-md-2 border-end sidebar sidebar-close fixed-top"
-            : "col-4 col-md-2 border-end sidebar sidebar-open fixed-top"
+            : "col-5 col-md-2 border-end sidebar sidebar-open fixed-top"
         }
       >
         <div className="d-flex justify-content-evenly mt-3">

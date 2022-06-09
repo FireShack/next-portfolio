@@ -1,4 +1,3 @@
-import { LanguagesSelector } from "../languages/LanguagesSelector";
 import Banner from "./Banner";
 
 export const HomeComp = () => {

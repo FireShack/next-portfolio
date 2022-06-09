@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useState } from "react";
 import { NextComponentType } from "next";
 import Image from "next/image";
 import es from "../images/es.svg";

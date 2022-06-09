@@ -1,11 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { UseAppContext } from "../../context/state";
-import { LanguagesSelector } from "../languages/LanguagesSelector";
 import SideBar from "../SideBar";
 import { Skills } from "./Skills";
 import teamAv from "../images/casual-life-3d-young-man-sitting-in-front-of-laptop.png";
-import studyAv from "../images/casual-life-3d-young-man-surrounded-by-gadgets-taking-notes.png";
 import ubication from "../images/casual-life-3d-pink-location-marker.png";
 import es from "../images/es.svg";
 import it from "../images/it.svg";

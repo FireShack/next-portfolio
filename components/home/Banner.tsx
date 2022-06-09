@@ -1,19 +1,15 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import SideBar from "../SideBar";
 import me from "../images/87921027.jpg";
-import meAv from "../images/casual-life-3d-boy-sitting-in-front-of-laptop.png";
-import { LanguagesSelector } from "../languages/LanguagesSelector";
 import { GiTronArrow } from "react-icons/gi";
-import { UseAppContext } from "../../context/state";
 import es from "../images/es.svg";
 import it from "../images/it.svg";
 import us from "../images/us.svg";
-import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const Banner = () => {
-  const theme = useContext(UseAppContext);
   const [language, setLang] = useState("en");
   const lang = [
     {
