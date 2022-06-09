@@ -66,14 +66,13 @@ export const Form = () => {
         });
         resetState();
       })
-      .catch(() =>
+      .catch((err) => {
         setStatus({
           code: 500,
           loading: false,
-          statusMsg:
-            "Sorry, there was an error. Try again or use another method.",
-        })
-      );
+          statusMsg: err,
+        });
+      });
   };
 
   return (

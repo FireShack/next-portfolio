@@ -19,10 +19,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MjY1NTZmNTFhYmMyNzg3ODJlOTc4ODYiLCJpYXQiOjE2NTQ2MTU1MTUsImV4cCI6MTY1NDYxOTExNX0.zJ1Y1pGzqsqfF2D46s5xGlhWzEyT3n9t1j5lNTpRks0",
       },
-      // body: JSON.stringify({
-      //   mail: "fireShack.Lucca@fireSales.com",
-      //   pass: "Palmeradeoro7",
-      // }),
     }
   );
   const data = await res.json();
@@ -55,17 +51,6 @@ const Blog: NextPage = ({
       </Head>
       <BlogComp />
       <div className="row text-center mt-4">
-        {/* {data.allUsers !== undefined ? (
-          data.allUsers.map((user: dataInterface) => {
-            return (
-              <div key={user.uid}>
-                <h6>{user.mail}</h6>
-              </div>
-            );
-          })
-        ) : (
-        <h4>Your account expired</h4>
-        )} */}
         <div className="col-6">
           <Image src={workingAv} alt="working on" />
         </div>

@@ -13,29 +13,33 @@ export default async function contact(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  if (req.method !== "POST") {
+    return res
+      .status(400)
+      .json({ msg: "This endpoint only supports POST petitions." });
+  }
   const body = req.body;
   const { name, email, msg } = JSON.parse(body);
-
   try {
     if (!name || !email || !msg) {
-      return res.status(400).json({msg: "Error"});
+      return res.status(400).json({ msg: "Error" });
     }
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
       auth: {
-        user: "deliveryshack@gmail.com",
-        pass: "wgptqfeafmiksvlb",
+        user: process.env.USER,
+        pass: process.env.PASS,
       },
     });
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
       from: `${email}`,
       to: "francoguardini10@gmail.com",
       subject: `Portfolio Contact from ${name}`,
-      text: `${msg}`,
+      text: `${msg} FROM: ${email}`,
     });
 
-    console.log("Message sent: %s", info.messageId);
+    // console.log("Message sent: %s", info.messageId);
     res.status(200).json({ msg: "Message sended" });
   } catch (error) {
     res.status(500).json({ msg: "Something went wrong" });
