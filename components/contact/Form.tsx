@@ -5,17 +5,76 @@ import { FiSend } from "react-icons/fi";
 import contactAv from "../images/casual-life-3d-man-talking-on-the-phone.png";
 import Image from "next/image";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 
 export const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
+  const [status, setStatus] = useState({
+    code: 0,
+    loading: false,
+    statusMsg: "",
+  });
+
+  const resetState = () => {
+    setTimeout(() => {
+      setStatus({
+        code: 0,
+        loading: false,
+        statusMsg: "",
+      });
+    }, 3000);
+  };
 
   const userData = {
     name,
     email,
     msg,
+  };
+
+  const sendData = (e: SyntheticEvent) => {
+    e.preventDefault();
+    // Start loading
+    setStatus({
+      code: 0,
+      loading: true,
+      statusMsg: "Sending",
+    });
+    // Request to the api
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(userData),
+    })
+      .then((res: any) => {
+        // Good response
+        if (res.status === 200) {
+          setStatus({
+            code: res.status,
+            loading: false,
+            statusMsg: "Mail sended successfully!",
+          });
+          // Reset the state
+          resetState();
+          return;
+        }
+        // Something went wrong
+        setStatus({
+          code: res.status,
+          loading: false,
+          statusMsg: "Something went wrong, try again!",
+        });
+        resetState();
+        // console.log(res);
+      })
+      .catch(() =>
+        setStatus({
+          code: 500,
+          loading: false,
+          statusMsg:
+            "Sorry, there was an error. Try again or use another method.",
+        })
+      );
   };
 
   return (
@@ -34,7 +93,7 @@ export const Form = () => {
         <div className="row mt-5 d-flex justify-content-around">
           <div className="col-12 col-md-5 contact-info">
             <Image src={contactAv} alt="contact" />
-            <div className="d-flex align-items-center justify-content-around mb-2">
+            <div className="d-flex align-items-center justify-content-around mb-2 bg-white">
               <a href="">
                 <BsLinkedin color="0072b1" size={35} />
               </a>
@@ -46,10 +105,7 @@ export const Form = () => {
 
           <form
             className="col-12 col-md-5 shadow-lg contact--form-box"
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log(userData);
-            }}
+            onSubmit={(e) => sendData(e)}
           >
             <div className="text-center p-2">
               <h2>Send me an email</h2>
@@ -77,10 +133,29 @@ export const Form = () => {
                 onChange={(e) => setMsg(e.target.value)}
               ></textarea>
             </div>
-            <div className="row mt-3 p-2 d-flex justify-content-center">
-              <button type="submit" className="contact--form-btn p-2 w-75">
-                Send <FiSend size={20} />
-              </button>
+            <div className="row mt-1 p-2 d-flex justify-content-center">
+              {status.loading ? (
+                <div className="contact--form-spinner p-2"></div>
+              ) : (
+                <button type="submit" className="contact--form-btn p-2 w-75">
+                  Send <FiSend size={20} />
+                </button>
+              )}
+              {status.code === 200 && (
+                <div className="contact-success mt-3 p-2 text-center transition-opacity-effect">
+                  {status.statusMsg}
+                </div>
+              )}
+              {status.code === 400 && (
+                <div className="contact-error mt-3 p-2 text-center transition-opacity-effect">
+                  You must complete all fields
+                </div>
+              )}
+              {status.code >= 500 && (
+                <div className="contact-error mt-3 p-2 text-center transition-opacity-effect">
+                  Something went wrong, try again
+                </div>
+              )}
             </div>
             <div className="row">
               <div className="mt-2">

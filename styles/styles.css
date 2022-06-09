@@ -457,3 +457,36 @@
   background-position: center;
   color: white;
 }
+
+.contact--form-spinner {
+  animation-name: loading-spinner;
+  animation-duration: 1s;
+  transition: 1s ease-in-out;
+  animation-iteration-count: infinite;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  border-top: 5px solid #0070f3;
+  border-right: 5px solid #0070f3;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-success {
+  background-color: #0070f3;
+  border-radius: 8px;
+  color: white;
+}
+
+.contact-error {
+  background-color: #f30000;
+  border-radius: 8px;
+  color: white;
+}
