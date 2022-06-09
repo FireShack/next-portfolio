@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <Head>
           <title>Franco Guardini</title>
           <meta name="description" content="" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/icons8-elemento-fuego-32.png" />
         </Head>
       </div>
       <HomeComp />

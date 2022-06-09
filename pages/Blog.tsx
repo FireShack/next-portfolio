@@ -47,7 +47,6 @@ const Blog: NextPage = ({
       <Head>
         <title>Franco Guardini</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <BlogComp />
       <div className="row text-center mt-4">

@@ -8,7 +8,6 @@ const About: NextPage = () => {
       <Head>
         <title>Franco Guardini</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <AboutComp />
     </div>
