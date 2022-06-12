@@ -1,14 +1,14 @@
 import { useState } from "react";
 import type { NextComponentType } from "next";
 import Link from "next/link";
-import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import { GiUfo } from "react-icons/gi";
+import Image from "next/image";
 import { AiOutlineHome } from "react-icons/ai";
 import { SiAboutdotme } from "react-icons/si";
 import { MdWorkOutline } from "react-icons/md";
 import { RiMailSendLine } from "react-icons/ri";
 import { FaRegNewspaper } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
+import fireIcon from "../public/icons8-elemento-fuego-32.png";
 
 const SideBar: NextComponentType = () => {
   const [theme, setTheme] = useState("light");
@@ -41,6 +41,10 @@ const SideBar: NextComponentType = () => {
     },
   ];
 
+  const downloadCv = () => {
+    fetch("/api/download").then((res) => console.log(res));
+  };
+
   return (
     <>
       <div
@@ -50,7 +54,7 @@ const SideBar: NextComponentType = () => {
             : "col-5 col-md-2 border-end sidebar sidebar-open fixed-top"
         }
       >
-        <div className="d-flex justify-content-evenly mt-3">
+        {/* <div className="d-flex justify-content-evenly mt-3">
           <div className="d-flex justify-content-center">
             {
               <>
@@ -93,6 +97,12 @@ const SideBar: NextComponentType = () => {
               </>
             }
           </div>
+        </div> */}
+        <div>
+          <div className="d-flex justify-content-center mt-3">
+            <Image src={fireIcon} alt="fire icon" />
+          </div>
+          <h4 className="text-center special-fonts">FireShack</h4>
         </div>
 
         {navItems.map((item) => {
@@ -113,9 +123,10 @@ const SideBar: NextComponentType = () => {
       </div>
       <div className="d-flex justify-content-center mt-1 fixed-top">
         <a
-          href="./images/87921027.jpg"
-          className="sidebar--cv-btn"
           download
+          href="/vercel.svg"
+          className="sidebar--cv-btn"
+          // onClick={downloadCv}
         >
           CV <AiOutlineDownload />
         </a>

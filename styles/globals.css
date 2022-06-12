@@ -58,6 +58,10 @@ button {
   font-family: "Libre Franklin", sans-serif;
 }
 
+.special-fonts {
+  font-family: "Anton", sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;

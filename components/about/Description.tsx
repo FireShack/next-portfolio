@@ -83,7 +83,7 @@ export const Description = () => {
                     things, and if there are about software world, better!
                     <br /> <br />
                     For me, the continue learning is very important. That's why
-                    i'm on the way to become an
+                    i'm on the way to become an {" "}
                     <span className="fw-bold">
                       Informatic/Electronic Engineer
                     </span>
