@@ -494,3 +494,24 @@
   border-radius: 8px;
   color: white;
 }
+
+.cv-select {
+  animation: open-select 1s;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  transition: 0.4s ease-in-out;
+  /* height: 10rem; */
+}
+
+.cv--select-option:hover {
+  background-color: #0070f3;
+  color: white;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+/* .cv--select-option h5:hover {
+  background-color: #0070f3;
+  color: white;
+  border-radius: 5px;
+} */

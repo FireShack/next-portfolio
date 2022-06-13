@@ -87,7 +87,7 @@ export const ProjectsList = () => {
       type: "http server",
       labels: ["typescript", "mongodb", "server"],
       description: `This is a complete rest server, entirely coded with TypeScript. Is a ready to use server to server apps like a social media app. Was thinked to serve a blog app, but changing some names and adding a few new features, you will be alowed to serve another app like this.
-        In this case, i used MongoDB and Mongoose for handle all data into the DB. It also includes validations, middlewares, interface and configs that makes this server a good starting shell for your next project.`,
+        In this case, i used MongoDB and Mongoose for handle all data into the DB. It also includes validations, middlewares, interface and configs.`,
       github: {
         link: "https://github.com/FireShack/rest-server-vTS-MongoDB",
         icon: <SiGithub size={25} />,

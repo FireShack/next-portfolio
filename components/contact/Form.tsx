@@ -92,7 +92,7 @@ export const Form = () => {
           <div className="col-12 col-md-5 contact-info">
             <Image src={contactAv} alt="contact" />
             <div className="d-flex align-items-center justify-content-around mb-2 bg-white">
-              <a href="">
+              <a href="https://www.linkedin.com/in/franco-guardini-68a050242/">
                 <BsLinkedin color="0072b1" size={35} />
               </a>
               <a href="https://github.com/FireShack">
@@ -174,7 +174,9 @@ export const Form = () => {
                     />
                   </div>
                   <div className="col-6">
+                    <a href="tel:+393478238707">
                     <p>+393478238707</p>
+                    </a>
                   </div>
                 </div>
               </div>

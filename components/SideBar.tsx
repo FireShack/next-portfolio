@@ -9,9 +9,11 @@ import { RiMailSendLine } from "react-icons/ri";
 import { FaRegNewspaper } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
 import fireIcon from "../public/icons8-elemento-fuego-32.png";
+import { CvSelect } from "./CvSelect";
+import { IoCloseOutline } from "react-icons/io5";
 
 const SideBar: NextComponentType = () => {
-  const [theme, setTheme] = useState("light");
+  const [openSelect, setOpenSelect] = useState(false);
   const [open, setOpen] = useState(false);
   const navItems = [
     {
@@ -102,7 +104,7 @@ const SideBar: NextComponentType = () => {
           <div className="d-flex justify-content-center mt-3">
             <Image src={fireIcon} alt="fire icon" />
           </div>
-          <h4 className="text-center special-fonts">FireShack</h4>
+          <h4 className="text-center special-fonts">Franco Guardini</h4>
         </div>
 
         {navItems.map((item) => {
@@ -122,14 +124,21 @@ const SideBar: NextComponentType = () => {
         })}
       </div>
       <div className="d-flex justify-content-center mt-1 fixed-top">
-        <a
-          download
-          href="/vercel.svg"
+        <button
           className="sidebar--cv-btn"
-          // onClick={downloadCv}
+          onClick={() =>
+            openSelect ? setOpenSelect(false) : setOpenSelect(true)
+          }
         >
-          CV <AiOutlineDownload />
-        </a>
+          {!openSelect ? (
+            <>
+              CV <AiOutlineDownload />{" "}
+            </>
+          ) : (
+            <IoCloseOutline size={25} />
+          )}
+        </button>
+        {openSelect && <CvSelect />}
       </div>
       <div className="menu-icon d-flex justify-content-end mt-1 fixed-top">
         {/* <BiMenuAltRight size={45} /> */}

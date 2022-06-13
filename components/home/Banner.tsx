@@ -148,7 +148,10 @@ const Banner = () => {
             <a href="https://github.com/FireShack">
               <BsGithub color="171515" size={30} />
             </a>
-            <a href="" className="mt-2">
+            <a
+              href="https://www.linkedin.com/in/franco-guardini-68a050242/"
+              className="mt-2"
+            >
               <BsLinkedin color="0072b1" size={30} />
             </a>
           </div>

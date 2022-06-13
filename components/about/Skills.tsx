@@ -66,8 +66,8 @@ export const Skills = () => {
     },
     {
       icon: <MdOutlineComputer color="" size={40} />,
-      span: "Non-stop,",
-      bold: "hard work all days",
+      span: "Problems",
+      bold: "solver",
     },
     {
       icon: <BsBook color="" size={40} />,
