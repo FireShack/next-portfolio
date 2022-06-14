@@ -180,6 +180,7 @@
 .avatarHome--background-light {
   background-image: url("../components/images/blob\ \(2\).svg");
   background-repeat: no-repeat;
+  background-position:-1rem ;
 }
 
 .avatarHome--background-dark {
@@ -500,7 +501,6 @@
   background-color: rgb(255, 255, 255);
   border-radius: 15px;
   transition: 0.4s ease-in-out;
-  /* height: 10rem; */
 }
 
 .cv--select-option:hover {
@@ -509,9 +509,3 @@
   border-radius: 5px;
   transition: 0.2s;
 }
-
-/* .cv--select-option h5:hover {
-  background-color: #0070f3;
-  color: white;
-  border-radius: 5px;
-} */
