@@ -127,7 +127,7 @@ export const Skills = () => {
           <h1 className="mt-3 text-center">How can i help you?</h1>
           <p className="">
             I take each project seriously, applying all my knowledge. When
-            i'm developing i focus myself on the next
+            i&apos;m developing i focus myself on the next
             <span className="fw-bold"> structure:</span>
           </p>
           {planning.map((step, i) => {

@@ -17,6 +17,7 @@ export const LanguagesSelector: NextComponentType = () => {
           height={25}
           width={25}
           onClick={() => setLanguage("es")}
+          alt="es"
         />
         <Image
           className="bar--language-flag rounded-circle"
@@ -24,6 +25,7 @@ export const LanguagesSelector: NextComponentType = () => {
           height={25}
           width={25}
           onClick={() => setLanguage("it")}
+          alt="it"
         />
         <Image
           className="bar--language-flag rounded-circle"
@@ -31,6 +33,7 @@ export const LanguagesSelector: NextComponentType = () => {
           height={25}
           width={25}
           onClick={() => setLanguage("en")}
+          alt="en"
         />
       </div>
     </div>

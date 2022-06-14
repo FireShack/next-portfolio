@@ -19,6 +19,7 @@ export const Description = () => {
           height={25}
           width={25}
           onClick={() => setLang("es")}
+          alt="es"
         />
       ),
     },
@@ -30,6 +31,7 @@ export const Description = () => {
           height={25}
           width={25}
           onClick={() => setLang("it")}
+          alt="it"
         />
       ),
     },
@@ -41,6 +43,7 @@ export const Description = () => {
           height={25}
           width={25}
           onClick={() => setLang("en")}
+          alt="en"
         />
       ),
     },
@@ -70,20 +73,20 @@ export const Description = () => {
             </div>
             <div className="">
               {language === "en" && (
-                <div className="">
-                  <div className=" mb-5 mt-3">
-                    <h2 className="">Who i am?</h2>
+                <div>
+                  <div className="mb-5 mt-3">
+                    <h2>Who i am?</h2>
                   </div>
                   <p>
-                    In few words, i'm a man who loves to develop high quality
-                    web apps. I'm specializing in JavaScript/TypeScript techs,
+                    In few words, i&apos;m a man who loves to develop high quality
+                    web apps. I&apos;m specializing in JavaScript/TypeScript techs,
                     like Reactjs, Nextjs or Nodejs. I also developed projects
-                    with Python. I was born in Argentina but i'm italian
+                    with Python. I was born in Argentina but i&apos;m italian
                     cittizen and i live in Italy now. I love to learn new
                     things, and if there are about software world, better!
                     <br /> <br />
-                    For me, the continue learning is very important. That's why
-                    i'm on the way to become an {" "}
+                    For me, the continue learning is very important. That&apos;s why
+                    i&apos;m on the way to become an {" "}
                     <span className="fw-bold">
                       Informatic/Electronic Engineer
                     </span>
@@ -94,17 +97,17 @@ export const Description = () => {
                 <div className="">
                   <div className="mb-5 mt-3">
                     <h2 className="">Chi sono io?</h2>
-                  </div>
+                  </div>   
                   <p>
-                    In poche parole, sono un uomo che ama sviluppare "high
-                    quality" web apps. Mi sto specializzando in
+                    In poche parole, sono un uomo che ama sviluppare &quot;high
+                    quality&quot; web apps. Mi sto specializzando in
                     JavaScript/TypeScript techs, come Reactjs, Nextjs oppure
                     Nodejs. Ho sviluppato proggeti anche con Python. Sono nato
                     in Argentina, ma sono cittadino italiano e addeso vivo in
                     Italia. Mi piace imparare cose nuove, e se sono di software,
                     meglio!
                     <br /> <br />
-                    Per me il l'apprendimento continuo è molto importante. Ecco
+                    Per me il l&apos;apprendimento continuo è molto importante. Ecco
                     perchè sono in il percorso di diventare
                     <span className="fw-bold">
                       Ingegniero Informatico/Elettronico

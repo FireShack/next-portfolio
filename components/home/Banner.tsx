@@ -20,6 +20,7 @@ const Banner = () => {
           height={25}
           width={25}
           onClick={() => setLang("es")}
+          alt="es"
         />
       ),
     },
@@ -31,6 +32,7 @@ const Banner = () => {
           height={25}
           width={25}
           onClick={() => setLang("it")}
+          alt="it"
         />
       ),
     },
@@ -42,6 +44,7 @@ const Banner = () => {
           height={25}
           width={25}
           onClick={() => setLang("en")}
+          alt="en"
         />
       ),
     },
@@ -78,15 +81,15 @@ const Banner = () => {
             {language === "en" && (
               <div className="">
                 <div className="text-center mb-5 mt-3 text-primary">
-                  <h2>Hi! I'm Franco 👋</h2>
+                  <h2>Hi! I&apos;m Franco 👋</h2>
                 </div>
                 <p>
-                  I'm a fullstack developer, typing code with technologies like
+                  I&apos;m a fullstack developer, typing code with technologies like
                   JavaScript, TypeScript or Python. You can read about
                   <Link href="/About">
                     <a className="text-primary"> my skills here. </a>
                   </Link>
-                  Now i'm focus on developing robust apps, crossing over a
+                  Now i&apos;m focus on developing robust apps, crossing over a
                   modern design with good ideas that solves problems
                 </p>
                 <div className="d-flex justify-content-around">
